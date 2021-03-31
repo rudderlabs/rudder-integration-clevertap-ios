@@ -12,6 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RudderCleverTapIntegration : NSObject<RSIntegration>
 
+@property (nonatomic) NSString *accountId;
+@property (nonatomic) NSString *accountToken;
+@property (nonatomic) NSString *region;
+@property (nonatomic) int logLevel;
+
 -(instancetype)initWithConfig:(NSDictionary *)config withAnalytics:(RSClient *)client withRudderConfig:(RSConfig*) rudderCinfig;
 
 @end
