@@ -1,0 +1,12 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'Rudder-CleverTap_Example' do
+  pod 'Rudder-CleverTap', :path => '../'
+
+  target 'Rudder-CleverTap_Tests' do
+    inherit! :search_paths
+
+  end
+end
