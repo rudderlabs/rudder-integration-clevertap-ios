@@ -22,7 +22,7 @@
             self.logLevel = [rudderConfig logLevel];
             if(self.accountId !=nil && self.accountToken != nil)
             {
-                if(self.region !=nil)
+                if(![self.region isEqualToString: @"none"])
                 {
                     [CleverTap setCredentialsWithAccountID:self.accountId token:self.accountToken region:self.region];
                 }
@@ -62,6 +62,21 @@
     [RSLogger logDebug:@"Inside reset"];
 }
 
+- (void)registeredForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    [[CleverTap sharedInstance] setPushToken:deviceToken];
+}
+
+- (void)receivedRemoteNotification:(NSDictionary *)userInfo
+{
+    [[CleverTap sharedInstance] handleNotificationWithData:userInfo];
+}
+
+- (void)handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo
+{
+    [[CleverTap sharedInstance] handleNotificationWithData:userInfo];
+}
+
 - (void) processRudderEvent: (nonnull RSMessage *) message {
     NSString *type = message.type;
     if([type isEqualToString:@"identify"]){
@@ -71,7 +86,7 @@
         if(userId && userId.length>0)
         {
             profile[@"Identity"] = userId;
-            [traits removeObjectForKey:@"id"];
+            [traits removeObjectForKey:@"userId"];
             
             if (traits[@"email"]) {
                 profile[@"Email"] = traits[@"email"];
@@ -120,10 +135,10 @@
                 }
             }
             
-            [[CleverTap sharedInstance] onUserLogin:traits];
+            [[CleverTap sharedInstance] onUserLogin:profile];
         }
     }
-    if([type isEqualToString:@"track"]){
+    else if([type isEqualToString:@"track"]){
         NSString *eventName = message.event;
         if([eventName isEqualToString:@"Order Completed"])
         {
@@ -158,31 +173,61 @@
 }
 
 -(void) handleEcommerceEvent:(RSMessage *) message {
-       NSMutableDictionary *chargeDetails = [NSMutableDictionary new];
-       NSArray *items = [NSArray new];
-       
-       NSDictionary *eventProperties = message.properties;
-       for (NSString *key in eventProperties.allKeys) {
-           id value = eventProperties[key];
-           if ([key isEqualToString:@"products"]) {
-               if (value != nil && [value isKindOfClass:[NSArray class]]) {
-                   NSArray *_value = (NSArray*) value;
-                   if ([_value count] > 0) {
-                       items = (NSArray *)value;
-                   }
-               }
-           } else if ([value isKindOfClass:[NSDictionary class]] || [value isKindOfClass:[NSArray class]]) {
-               continue;
-           } else if ([key isEqualToString:@"order_id"]) {
-               chargeDetails[@"Charged ID"] = value;
-           } else if ([key isEqualToString:@"revenue"]) {
-               chargeDetails[@"Amount"] = value;
-           } else {
-               chargeDetails[key] = value;
-           }
-       }
-       
-       [[CleverTap sharedInstance] recordChargedEventWithDetails:chargeDetails andItems:items];
+    NSMutableDictionary *chargeDetails = [NSMutableDictionary new];
+    NSArray *items = [NSArray new];
+    
+    NSDictionary *eventProperties = message.properties;
+    for (NSString *key in eventProperties.allKeys) {
+        id value = eventProperties[key];
+        if ([key isEqualToString:@"products"]) {
+            if (value != nil && [value isKindOfClass:[NSArray class]]) {
+                NSArray *_products = (NSArray*) value;
+                if ([_products count] > 0) {
+                    items = [self getProductList:_products];
+                }
+            }
+        } else if ([value isKindOfClass:[NSDictionary class]] || [value isKindOfClass:[NSArray class]]) {
+            continue;
+        } else if ([key isEqualToString:@"order_id"]) {
+            chargeDetails[@"Charged ID"] = value;
+        } else if ([key isEqualToString:@"revenue"]) {
+            chargeDetails[@"Amount"] = value;
+        } else {
+            chargeDetails[key] = value;
+        }
+    }
+    
+    [[CleverTap sharedInstance] recordChargedEventWithDetails:chargeDetails andItems:items];
+}
+
+-(NSArray*) getProductList:(NSArray*) products {
+    NSMutableArray *transformedProducts = [[NSMutableArray alloc] init];
+    for(NSDictionary *product in products)
+    {
+        NSMutableDictionary *transformedProduct = [[NSMutableDictionary alloc] init];
+        if(product[@"productId"])
+        {
+            transformedProduct[@"id"] = product[@"productId"];
+        }
+        else if(product[@"product_id"])
+        {
+            transformedProduct[@"id"] = product[@"product_id"];
+        }
+        if(product[@"name"])
+        {
+            transformedProduct[@"name"] = product[@"name"];
+        }
+        if(product[@"sku"])
+        {
+            transformedProduct[@"sku"] = product[@"sku"];
+        }
+        if(product[@"price"])
+        {
+            transformedProduct[@"price"] = product[@"price"];
+        }
+        [transformedProducts addObject:transformedProduct];
+    }
+    return transformedProducts;
 }
 
 
