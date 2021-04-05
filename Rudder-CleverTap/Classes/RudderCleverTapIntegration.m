@@ -62,21 +62,6 @@
     [RSLogger logDebug:@"Inside reset"];
 }
 
-- (void)registeredForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
-{
-    [[CleverTap sharedInstance] setPushToken:deviceToken];
-}
-
-- (void)receivedRemoteNotification:(NSDictionary *)userInfo
-{
-    [[CleverTap sharedInstance] handleNotificationWithData:userInfo];
-}
-
-- (void)handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo
-{
-    [[CleverTap sharedInstance] handleNotificationWithData:userInfo];
-}
-
 - (void) processRudderEvent: (nonnull RSMessage *) message {
     NSString *type = message.type;
     if([type isEqualToString:@"identify"]){
@@ -171,6 +156,28 @@
     }
     
 }
+
+#pragma mark- Push Notification methods
+
+- (void)registeredForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    NSLog(@"registering for remote notifications");
+    [[CleverTap sharedInstance] setPushToken:deviceToken];
+}
+
+- (void)receivedRemoteNotification:(NSDictionary *)userInfo
+{
+    NSLog(@"received remote notification");
+    [[CleverTap sharedInstance] handleNotificationWithData:userInfo];
+}
+
+- (void)handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo
+{
+    NSLog(@"handling action with identifier");
+    [[CleverTap sharedInstance] handleNotificationWithData:userInfo];
+}
+
+#pragma mark - Utils
 
 -(void) handleEcommerceEvent:(RSMessage *) message {
     NSMutableDictionary *chargeDetails = [NSMutableDictionary new];

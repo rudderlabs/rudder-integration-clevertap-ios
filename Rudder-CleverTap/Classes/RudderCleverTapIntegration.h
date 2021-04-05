@@ -18,6 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) int logLevel;
 
 -(instancetype)initWithConfig:(NSDictionary *)config withAnalytics:(RSClient *)client withRudderConfig:(RSConfig*) rudderCinfig;
+- (void)registeredForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken;
+- (void)receivedRemoteNotification:(NSDictionary *)userInfo;
+- (void)handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo;
 
 @end
 
