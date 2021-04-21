@@ -21,152 +21,248 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions 
 {
     // Override point for customization after application launch.
-    NSString *WRITE_KEY = @"1qWrbpXGiDuf2xjaq3ti9CLBC53";
-    NSString *DATA_PLANE_URL = @"https://c3b1c74848d1.ngrok.io";
+    NSString *WRITE_KEY = @"1rQzF38dtwHk7n6A196Wmo5pPCw";
+    NSString *DATA_PLANE_URL = @"https://6be12a7be9b0.ngrok.io/";
     
     RSConfigBuilder *configBuilder = [[RSConfigBuilder alloc] init];
-    //[configBuilder withDataPlaneUrl:DATA_PLANE_URL];
-    [configBuilder withControlPlaneUrl:@"https://0035571bd518.ngrok.io"];
+    [configBuilder withDataPlaneUrl:DATA_PLANE_URL];
+    [configBuilder withControlPlaneUrl:@"https://api.dev.rudderlabs.com"];
     [configBuilder withLoglevel:RSLogLevelDebug];
     [configBuilder withFactory:[RudderCleverTapFactory instance]];
     [configBuilder withTrackLifecycleEvens:false];
     [RSClient getInstance:WRITE_KEY config:[configBuilder build]];
     
     // register for push notifications
-    UNUserNotificationCenter* center = [UNUserNotificationCenter currentNotificationCenter];
-    center.delegate = self;
-    [center requestAuthorizationWithOptions:(UNAuthorizationOptionAlert | UNAuthorizationOptionSound | UNAuthorizationOptionBadge)
-                          completionHandler:^(BOOL granted, NSError * _Nullable error) {
-        if (granted) 
-        {
-            dispatch_async(dispatch_get_main_queue(), ^(void) {
-                [[UIApplication sharedApplication] registerForRemoteNotifications];
-            });
-        }
-    }];
-    
-   //TC: 1. Sending simple track call with event name
-    [[RSClient sharedInstance] identify: @"User_111"
-                                         traits: @{
-                                             @"name": @"Manashi",
-                                             @"city": @"Kolkata",
-                                             @"email": @"manashi@gmail.com"
-                                         }
-             ];
-    [[RSClient sharedInstance] track:@"Songs Viewed"];
-
-
-    //Tc: 2. Sending simple track call with event name and properties
-
-//    [[RSClient sharedInstance] track:@"Video Clicked"
-//    properties:@{@"name": @"carryminati",
-//                 @"platform": @"youtube"
+//    UNUserNotificationCenter* center = [UNUserNotificationCenter currentNotificationCenter];
+//    center.delegate = self;
+//    [center requestAuthorizationWithOptions:(UNAuthorizationOptionAlert | UNAuthorizationOptionSound | UNAuthorizationOptionBadge)
+//                          completionHandler:^(BOOL granted, NSError * _Nullable error) {
+//        if (granted)
+//        {
+//            dispatch_async(dispatch_get_main_queue(), ^(void) {
+//                [[UIApplication sharedApplication] registerForRemoteNotifications];
+//            });
+//        }
 //    }];
-//    
-//    //Tc: 3. Sending track call with event name and properties by setting the priority as "Critical"
+    
+   
+    //TC:1 //Track call only with event name before identify
+    //[[RSClient sharedInstance] track:@"Songs Viewed before identify"];
+
+    //TC:2 //Identify call only with userId
+   //[[RSClient sharedInstance] identify:@"ankur1"];
 //
-//    [[RSClient sharedInstance] track:@"Purchase"
-//                               properties:@{@"details": @"pant"
-//                               }];
-//            [[RSClient sharedInstance] track:@"Simple track call"];
+//    //TC:3 //Identify call with the same userId and update traits
+//    [[RSClient sharedInstance] identify:@"ankur1"
+//                                 traits:@{@"name": @"Ankur1 Mittal",
+//                                          @"pincode": @"713216",
+//                                          @"email": @"ankur1@gmail.com",
+//                                          @"state" : @"WB",
+//                                          @"city" : @"Durgapur",
+//                                          @"country": @"India"
+//                                 }
+//    ];
+//
+//    //TC:4 //Track call with event name and property after Identify
+//    [[RSClient sharedInstance] track:@"Songs Viewed after identify" properties:@{
+//        @"details" : @"anything",
+//        @"song name" : @"Where r u now"
+//    }];
+//
+//    //TC:5 //Identify with anonymousId, email, and name
+//    [[RSClient sharedInstance] identify:@""
+//                                 traits:@{@"email": @"ankur2@gmail.com",
+//                                          @"name": @"Ankur2 Mittal"
+//                                 }
+//    ];
+//
+//    //TC:6 //Screen with identified anonymousId, name and properties
+//    [[RSClient sharedInstance] screen:@"ViewController" properties: @{
+//        @"url" : @"www.viewcontroller.com",
+//        @"path": @"../www"
+//    }];
+//
+//    //TC: 7 //Identify call with userId, email, phone, gender, education, married, employed, name
+//    [[RSClient sharedInstance] identify:@"ankur3"
+//                                 traits:@{@"name": @"Ankur3 Mittal",
+//                                          @"pincode": @"700065",
+//                                          @"country": @"India",
+//                                          @"state" : @"WB",
+//                                          @"city" : @"Durgapur",
+//                                          @"email": @"ankur3@gmail.com",
+//                                          @"phone": @"+918250294239",
+//                                          @"gender": @"M",
+//                                          @"Education":@"Graduate",
+//                                          @"Employed":@"Y",
+//                                          @"Married":@"N"
+//
+//                                 }
+//    ];
+//
+//    //TC:8 //Identify call with the wrong email and phone number without country code.
+//    [[RSClient sharedInstance] identify:@"ankur4"
+//                                 traits:@{@"name": @"Ankur4 Mittal",
+//                                          @"email": @"ankur4gmail",
+//                                          @"phone": @"8260294239"
+//
+//                                 }
+//    ];
+//
+//    //TC: 9 //Identify call with gender : M/m/Male/male, F/f/Female/female
+//
+//    [[RSClient sharedInstance] identify:@"ankur5"
+//                                 traits:@{@"name": @"Ankur5 Mittal",
+//                                          @"gender": @"m"
+//
+//                                 }
+//    ];
+//
+//    [[RSClient sharedInstance] identify:@"ankur6"
+//                                 traits:@{@"name": @"Ankur6 Mittal",
+//                                          @"gender": @"male"
+//
+//                                 }
+//    ];
+//
+//    [[RSClient sharedInstance] identify:@"ankur7"
+//                                 traits:@{@"name": @"Ankur7 Mittal",
+//                                          @"gender": @"Male"
+//
+//                                 }
+//    ];
+//
+//    [[RSClient sharedInstance] identify:@"ankur8"
+//                                 traits:@{@"name": @"Ankur8 Mittal",
+//                                          @"gender": @"F"
+//
+//                                 }
+//    ];
+//
+//    [[RSClient sharedInstance] identify:@"ankur9"
+//                                 traits:@{@"name": @"Ankur9 Mittal",
+//                                          @"gender": @"f"
+//
+//                                 }
+//    ];
+//
+//    [[RSClient sharedInstance] identify:@"ankur10"
+//                                 traits:@{@"name": @"Ankur10 Mittal",
+//                                          @"gender": @"female"
+//
+//                                 }
+//    ];
+//
+//    [[RSClient sharedInstance] identify:@"ankur11"
+//                                 traits:@{@"name": @"Ankur11 Mittal",
+//                                          @"gender": @"Female"
+//
+//                                 }
+//    ];
+//
+//    //TC: 10 //Identify call with birthday  : Date/String
+//    [[RSClient sharedInstance] identify:@"ankur12"
+//                                    traits:@{@"name": @"Ankur12 Mittal",
+//                                             @"birthday": @"2020-01-01"
+//
+//                                    }
+//       ];
+//    NSDate *date= [NSDate date];
+//    [[RSClient sharedInstance] identify:@"ankur13"
+//                                 traits:@{@"name": @"Ankur13 Mittal",
+//                                          @"birthday": date
+//
+//                                 }
+//    ];
+//
+//    //TC:11 //Identify call with Array of array/ Array of object/ Object of object/
+//    // array of integers/ Array of strings/ simple key value pair(key as a
+//    // string and value as int or string).
+//
+//    //array of array
+//    NSArray *arr = @[ @[ @'0', @'1', @'2'],
+//    @[ @'0', @'1', @'2']];
+    NSArray *myArray1 = @[@"red", @"blue"];
+   NSArray *myArray2 = @[@111, @222];
+//
+//    [[RSClient sharedInstance] identify:@"sumo1"
+//                                 traits:@{@"data": arr
+//
+//                                 }
+//    ];
+//
+//    //Array of object
+//    [[RSClient sharedInstance] identify:@"sumo2"
+//                                 traits:@{@"data": @[
+//                                                  @{
+//                                                      @"pro_color": @"Black",
+//                                                      @"price" :@1234
+//                                                  }
+//                                                  ]}
+//    ];
+//
+//    //object of object
+//     [[RSClient sharedInstance] identify:@"sumo3"
+//                                  traits:@{@"data": @{
+//                                                   @"price": @1120,
+//                                                   @"products": @{
+//                                                           @"color": @"multi"
+//                                                   }
+//                                  }}
+//       ];
+//
+//    //array of integer
+//    [[RSClient sharedInstance] identify:@"sumo4"
+//                                 traits:@{@"data": myArray2
+//
+//                                 }
+//    ];
+//
+//    //array of string
+//    [[RSClient sharedInstance] identify:@"sumo5"
+//                                 traits:@{@"data": myArray1,
+//                                          @"value": @100
+//
+//                                 }
+//    ];
 //
 //
-//    //Tc: 4. Sending track call with event name and properties by setting the priority as "Normal"
-//
-//    [[RSClient sharedInstance] track:@"Purchase 1"
-//                               properties:@{@"details": @"pant"
-//                               }];
-//            [[RSClient sharedInstance] track:@"Simple track call 1"];
-//    
-//    
-//    //Tc: 5. Sending 5 track call, some with "Normal" priority and some with "Critical" priority and by giving some value to "Transmission Interval"
-//
-//        [[RSClient sharedInstance] track:@"Bloo Normal Event 1"];
-//        [[RSClient sharedInstance] track:@"Bloo Critical Event 1"];
-//        [[RSClient sharedInstance] track:@"Bloo Normal Event 2"];
-//        [[RSClient sharedInstance] track:@"Bloo Critical Event 2"];
-//        [[RSClient sharedInstance] track:@"Bloo Critical Event 3"];
-//        [[RSClient sharedInstance] track:@"Bloo Normal Event 3"];
-//    
-//    //Tc: 6. Sending track call with event name and in properties some key/value length longer than 125 characters.
-//
-//    //Key:
-//
-//     [[RSClient sharedInstance] track:@"Too long key"
-//                               properties:@{@"mbkdbakckdbkcbandcandcndncdbakcbdbcbdkjbcldncln kdnkcnnlkcdnlkcndnckndncldnlcnldnckdnclnncndlclndcndncdnjkcdkncknsdkhcshdcnndvkkvnsnv": @"value",
-//                                            @"details": @"its should be truncated"
-//                               }];
 //
 //
-//    //Value:
+//    //TC:12 //Identify call with email
+//    [[RSClient sharedInstance] identify:@"ankur14@gmail.com"
+//                                   traits:@{@"name": @"Ankur14 Mittal"
 //
-//    [[RSClient sharedInstance] track:@"Too long Value"
-//                               properties:@{@"Key": @"mbkdbakckdbkcbandcandcndncdbakcbdbcbdkjbcldncln kdnkcnnlkcdnlkcndnckndncldnlcnldnckdnclnncndlclndcndncdnjkcdkncknsdkhcshdcnndvkkvnsnv",
-//                                            @"details": @"its should be truncated"
-//                               }];
+//                                   }
+//      ];
 //
-//
-//    //Tc: 7. Sending track call with event name length longer than 256 characters.
-//
-//    [[RSClient sharedInstance] track:@"kbkdbakckdbkcbandcandcndncdbakcbdbcbdkjbcldncln kdnkcnnlkcdnlkcndnckndncldnlcnldnckdnclnncndlclndcndncdnjkcdkncknsdkhcshdcnndvkkvnsnvhkjbdckadkjhvcjkdbcbdb kjsdhvdvs,mbvkjsfkvbsbvdbvzjksklfbvmnfdlavjvsbdvmmfsnvkhfdvfgweiohgjkvbjkhrivnkvbdsjvvbnvlhfvnfbvjkhvfbv"
-//                               properties:@{@"Key": @"mbkdbakckdbkcbandcandcndncdbakcbdbcbdkjbcldncln kdnkcnnlkcdnlkcndnckndncldnlcnldnckdnclnncndlclndcndncdnjkcdkncknsdkhcshdcnndvkkvnsnv",
-//                                            @"details": @"its should be truncated"
-//                               }];
+//    //TC:13 //Track call with name and properties with array of strings/integers
 //
 //
-//    //Tc: 8. Sending track call with event name and in properties more than 20 key:value pair
+//    [[RSClient sharedInstance] track:@"array of strings" properties:@{
+//        @"value": myArray1
+//       }];
 //
-//     [[RSClient sharedInstance] track:@"manadbakckdbkcbandcandcndncdbakcbdbcbdkjbcldncln kdnkcnnlkcdnlkcndnckndncldnlcnldnckdnclnncndlclndcndncdnjkcdkncknsdkhcshdcnndvkkvnsnvhkjbdckadkjhvcjkdbcbdb kjsdhvdvs,mbvkjsfkvbsbvdbvzjksklfbvmnfdlavjvsbdvmmfsnvkhfdvfgweiohgjkvbjkhrivnkvbdsjvvbnvlhfvnfbvjkhvfbv"
-//                               properties:@{@"Category" : @"Music", @"FileName" : @"favorite.avi",@"Category1" : @"Music", @"FileName1" : @"favorite.avi",@"Category2" : @"Music", @"FileName2" : @"favorite.avi",@"Category3" : @"Music", @"FileName3" : @"favorite.avi",@"Category4" : @"Music", @"FileName4" : @"favorite.avi",@"Category5" : @"Music", @"FileName5" : @"favorite.avi",@"Category6" : @"Music", @"FileName6" : @"favorite.avi",@"Category7" : @"Music", @"FileName7" : @"favorite.avi",@"Category8" : @"Music", @"FileName8" : @"favorite.avi",@"Category9" : @"Music", @"FileName9" : @"favorite.avi",@"Category10" : @"Music", @"FileName10" : @"favorite.avi",@"Category11" : @"Music", @"FileName11" : @"favorite.avi"
-//                               }];
-//
-//
-//    //Tc: 9. Sending track call with event name and in properties where value of a key is Integer/String/Double/Empty/Array/Object
-//
-//    [[RSClient sharedInstance] track:@"Integer Value"
-//                                  properties:@{@"prop1": @100
-//                                  }];
-//            [[RSClient sharedInstance] track:@"String Value"
-//            properties:@{@"prop1": @"300"
-//            }];
-//            [[RSClient sharedInstance] track:@"Double Value"
-//            properties:@{@"prop1": @3000.88
-//            }];
-//            [[RSClient sharedInstance] track:@"Empty Value"
-//            properties:@{@"prop1": @""
-//            }];
-//
-//            [[RSClient sharedInstance] track:@"Array Value"
-//            properties:@{@"prop1": @[@1,@2,@3]
-//            }];
-//            [[RSClient sharedInstance] track:@"Object Value"
-//                                  properties:@{@"prop1": @{@"color1":@"red", @"color2": @"blue"}
-//            }];
+//    [[RSClient sharedInstance] track:@"array of integers" properties:@{
+//           @"value" : myArray2
+//       }];
 //
 //
-//    //Tc: 10. Sending duplicate track events with some matching keys or mismatching keys
+//    //TC:14 //Screen call with name
+   //[[RSClient sharedInstance] screen:@"Amazon Page"];
 //
-//    [[RSClient sharedInstance] track:@"Shopping Done"
-//                                  properties:@{@"price": @100,
-//                                               @"size": @"L"
-//                                  }];
 //
-//    [[RSClient sharedInstance] track:@"Shopping Done"
-//                                  properties:@{@"price": @120,
-//                                               @"size": @"L"
-//                                  }];
+    //TC:15 //Screen call with name, category and property
+//    [[RSClient sharedInstance] screen:@"Limeroad Home" properties: @{
+//        @"url" : @"www.limeroad.com",
+//        @"path": @"../www",
+//        @"category": @"Limeroad Category"
+//    }];
 //
-//    //Tc: 11. Sending screen call with screen name
-//
-//    [[RSClient sharedInstance] screen:@"Home"
-//                                   properties:@{@"name": @"screen2",
-//                                                @"new propert": @"prop val 1"
-//                                   }];
-//
-//    //Tc: 12. Sending screen call with screen name and properties by setting the priority as "normal"
-//
-//     [[RSClient sharedInstance] screen:@"Cinema Name"  properties:@{@"prop_key" : @"prop_value",@"category":@"TENET"}];
-//    
+    
+    [[RSClient sharedInstance] identify:@"arkoprovo1"];
+    [[RSClient sharedInstance] screen:@"Amazon Page"];
+    [[RSClient sharedInstance] track:@"Songs Viewed before identify"];
+    
     
     
     return YES;
@@ -202,6 +298,7 @@
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken 
 {
+    NSLog(@"PUSH NOTIFICATION GETTING STARTED");
     [[RudderCleverTapIntegration alloc] registeredForRemoteNotificationsWithDeviceToken:deviceToken];
 }
 

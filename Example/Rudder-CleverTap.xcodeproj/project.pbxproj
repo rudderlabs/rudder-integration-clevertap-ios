@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44B5DB431816475334861E77 /* Pods_Rudder_CleverTap_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D84B1728EE48DE12EAF09AF /* Pods_Rudder_CleverTap_Tests.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -20,10 +21,9 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
+		6C2CBF8D18116BC5F8BB896A /* Pods_Rudder_CleverTap_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91C12B77F6277D941127F3AE /* Pods_Rudder_CleverTap_Example.framework */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
-		7F7F936471BF5F8D3005AE41 /* Pods_Rudder_CleverTap_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459B447B31E699824A7A58E3 /* Pods_Rudder_CleverTap_Tests.framework */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
-		9EACA14DD0B505109822B273 /* Pods_Rudder_CleverTap_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43337BD6B6DE153511771809 /* Pods_Rudder_CleverTap_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,13 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0B7A8ECE86964C498D1DAD44 /* Pods-Rudder-CleverTap_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rudder-CleverTap_Example.release.xcconfig"; path = "Target Support Files/Pods-Rudder-CleverTap_Example/Pods-Rudder-CleverTap_Example.release.xcconfig"; sourceTree = "<group>"; };
+		0D84B1728EE48DE12EAF09AF /* Pods_Rudder_CleverTap_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rudder_CleverTap_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		12F91D76530B3B279310D5C3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		2320FE5EECC05063A59001A1 /* Pods-Rudder-CleverTap_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rudder-CleverTap_Tests.debug.xcconfig"; path = "Target Support Files/Pods-Rudder-CleverTap_Tests/Pods-Rudder-CleverTap_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		3E7FB6506DE4BE8ADF3872E9 /* Pods-Rudder-CleverTap_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rudder-CleverTap_Tests.debug.xcconfig"; path = "Target Support Files/Pods-Rudder-CleverTap_Tests/Pods-Rudder-CleverTap_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		40464C1DF088713795CA4177 /* Rudder-CleverTap.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = "Rudder-CleverTap.podspec"; path = "../Rudder-CleverTap.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		43337BD6B6DE153511771809 /* Pods_Rudder_CleverTap_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rudder_CleverTap_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		459B447B31E699824A7A58E3 /* Pods_Rudder_CleverTap_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rudder_CleverTap_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5DCC105AB92B9EC5620070E0 /* Pods-Rudder-CleverTap_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rudder-CleverTap_Tests.release.xcconfig"; path = "Target Support Files/Pods-Rudder-CleverTap_Tests/Pods-Rudder-CleverTap_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* Rudder-CleverTap_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rudder-CleverTap_Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -64,9 +61,12 @@
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		831BC2F8BAD46139600554C0 /* Pods-Rudder-CleverTap_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rudder-CleverTap_Example.debug.xcconfig"; path = "Target Support Files/Pods-Rudder-CleverTap_Example/Pods-Rudder-CleverTap_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		91C12B77F6277D941127F3AE /* Pods_Rudder_CleverTap_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rudder_CleverTap_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		92F1B89EA138C96FE8D68BCB /* Pods-Rudder-CleverTap_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rudder-CleverTap_Example.release.xcconfig"; path = "Target Support Files/Pods-Rudder-CleverTap_Example/Pods-Rudder-CleverTap_Example.release.xcconfig"; sourceTree = "<group>"; };
 		A5A6D50DF14C6F6409B28C0C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		AC2FF07806F3C02E0BA044BE /* Pods-Rudder-CleverTap_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rudder-CleverTap_Example.debug.xcconfig"; path = "Target Support Files/Pods-Rudder-CleverTap_Example/Pods-Rudder-CleverTap_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		AF45599154ECA6DC10C723E2 /* Pods-Rudder-CleverTap_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rudder-CleverTap_Tests.release.xcconfig"; path = "Target Support Files/Pods-Rudder-CleverTap_Tests/Pods-Rudder-CleverTap_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		F6A9B5DF261B065100EF95B3 /* Rudder-CleverTap_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Rudder-CleverTap_Example.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,7 +78,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				9EACA14DD0B505109822B273 /* Pods_Rudder_CleverTap_Example.framework in Frameworks */,
+				6C2CBF8D18116BC5F8BB896A /* Pods_Rudder_CleverTap_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,7 +89,7 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				7F7F936471BF5F8D3005AE41 /* Pods_Rudder_CleverTap_Tests.framework in Frameworks */,
+				44B5DB431816475334861E77 /* Pods_Rudder_CleverTap_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,8 +125,8 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				43337BD6B6DE153511771809 /* Pods_Rudder_CleverTap_Example.framework */,
-				459B447B31E699824A7A58E3 /* Pods_Rudder_CleverTap_Tests.framework */,
+				91C12B77F6277D941127F3AE /* Pods_Rudder_CleverTap_Example.framework */,
+				0D84B1728EE48DE12EAF09AF /* Pods_Rudder_CleverTap_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -190,10 +190,10 @@
 		CBAE0E9FA4D4E006016F7E8A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				831BC2F8BAD46139600554C0 /* Pods-Rudder-CleverTap_Example.debug.xcconfig */,
-				0B7A8ECE86964C498D1DAD44 /* Pods-Rudder-CleverTap_Example.release.xcconfig */,
-				2320FE5EECC05063A59001A1 /* Pods-Rudder-CleverTap_Tests.debug.xcconfig */,
-				5DCC105AB92B9EC5620070E0 /* Pods-Rudder-CleverTap_Tests.release.xcconfig */,
+				AC2FF07806F3C02E0BA044BE /* Pods-Rudder-CleverTap_Example.debug.xcconfig */,
+				92F1B89EA138C96FE8D68BCB /* Pods-Rudder-CleverTap_Example.release.xcconfig */,
+				3E7FB6506DE4BE8ADF3872E9 /* Pods-Rudder-CleverTap_Tests.debug.xcconfig */,
+				AF45599154ECA6DC10C723E2 /* Pods-Rudder-CleverTap_Tests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -205,11 +205,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "Rudder-CleverTap_Example" */;
 			buildPhases = (
-				937EE2A857F0163392293FEE /* [CP] Check Pods Manifest.lock */,
+				BDCEA8BE7C7D9DF1C192FF5C /* [CP] Check Pods Manifest.lock */,
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				6F039E1F065572B46C588544 /* [CP] Embed Pods Frameworks */,
+				B1E3DF95EC095ABA1CBF23C2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -224,7 +224,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6003F5C2195388D20070C39A /* Build configuration list for PBXNativeTarget "Rudder-CleverTap_Tests" */;
 			buildPhases = (
-				F226D298F5DC2E603D165387 /* [CP] Check Pods Manifest.lock */,
+				78D986D546119B3EDC5987FC /* [CP] Check Pods Manifest.lock */,
 				6003F5AA195388D20070C39A /* Sources */,
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
@@ -300,7 +300,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6F039E1F065572B46C588544 /* [CP] Embed Pods Frameworks */ = {
+		78D986D546119B3EDC5987FC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Rudder-CleverTap_Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1E3DF95EC095ABA1CBF23C2 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -322,7 +344,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Rudder-CleverTap_Example/Pods-Rudder-CleverTap_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		937EE2A857F0163392293FEE /* [CP] Check Pods Manifest.lock */ = {
+		BDCEA8BE7C7D9DF1C192FF5C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -338,28 +360,6 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Rudder-CleverTap_Example-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F226D298F5DC2E603D165387 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Rudder-CleverTap_Tests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -500,7 +500,7 @@
 		};
 		6003F5C0195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 831BC2F8BAD46139600554C0 /* Pods-Rudder-CleverTap_Example.debug.xcconfig */;
+			baseConfigurationReference = AC2FF07806F3C02E0BA044BE /* Pods-Rudder-CleverTap_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Rudder-CleverTap_Example.entitlements";
@@ -518,7 +518,7 @@
 		};
 		6003F5C1195388D20070C39A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0B7A8ECE86964C498D1DAD44 /* Pods-Rudder-CleverTap_Example.release.xcconfig */;
+			baseConfigurationReference = 92F1B89EA138C96FE8D68BCB /* Pods-Rudder-CleverTap_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Rudder-CleverTap_Example.entitlements";
@@ -536,7 +536,7 @@
 		};
 		6003F5C3195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2320FE5EECC05063A59001A1 /* Pods-Rudder-CleverTap_Tests.debug.xcconfig */;
+			baseConfigurationReference = 3E7FB6506DE4BE8ADF3872E9 /* Pods-Rudder-CleverTap_Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -561,7 +561,7 @@
 		};
 		6003F5C4195388D20070C39A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5DCC105AB92B9EC5620070E0 /* Pods-Rudder-CleverTap_Tests.release.xcconfig */;
+			baseConfigurationReference = AF45599154ECA6DC10C723E2 /* Pods-Rudder-CleverTap_Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
