@@ -81,71 +81,91 @@
         NSMutableDictionary *traits = [message.context.traits mutableCopy];
         NSMutableDictionary *profile = [[NSMutableDictionary alloc] init];
         NSString *userId     = message.userId;
-        if(userId && userId.length>0)
+        if (traits[@"userId"])
         {
             profile[@"Identity"] = userId;
             [traits removeObjectForKey:@"userId"];
-            
-            if (traits[@"email"]) 
-            {
-                profile[@"Email"] = traits[@"email"];
-                [traits removeObjectForKey:@"email"];
-            }
-            
-            if (traits[@"name"]) 
-            {
-                profile[@"Name"] = traits[@"name"];
-                [traits removeObjectForKey:@"name"];
-            }
-            
-            if (traits[@"phone"]) 
-            {
-                profile[@"Phone"] = [NSString stringWithFormat:@"%@", traits[@"phone"]];
-                [traits removeObjectForKey:@"phone"];
-            }
-            
-            if ([traits[@"gender"] isKindOfClass:[NSString class]]) 
-            {
-                NSString *gender = traits[@"gender"];
-                if ([gender.lowercaseString isEqualToString:@"male"] || [gender.lowercaseString isEqualToString:@"m"]) 
-                {
-                    profile[@"Gender"] = @"M";
-                } 
-                else if ([gender.lowercaseString isEqualToString:@"female"] || [gender.lowercaseString isEqualToString:@"f"]) 
-                {
-                    profile[@"Gender"] = @"F";
-                }
-                [traits removeObjectForKey:@"gender"];
-            }
-            
-            if ([traits[@"birthday"] isKindOfClass:[NSString class]]) 
-            {
-                NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-                NSLocale *enUSPOSIXLocale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
-                [dateFormatter setLocale:enUSPOSIXLocale];
-                [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-                profile[@"DOB"] = [dateFormatter dateFromString:traits[@"birthday"]];
-                [traits removeObjectForKey:@"birthday"];
-            }
-            
-            else if ([traits[@"birthday"] isKindOfClass:[NSDate class]]) 
-            {
-                profile[@"DOB"] = traits[@"birthday"];
-                [traits removeObjectForKey:@"birthday"];
-            }
-            
-            // Only Primitive types, Date Object, String arrays are accepted
-            for (NSString *key in traits.allKeys) 
-            {
-                id value = traits[key];
-                if (![value isKindOfClass:[NSDictionary class]]) 
-                {
-                    profile[key] = value;
-                }
-            }
-            
-            [[CleverTap sharedInstance] onUserLogin:profile];
         }
+        if (traits[@"email"])
+        {
+            profile[@"Email"] = traits[@"email"];
+            [traits removeObjectForKey:@"email"];
+        }
+        
+        if (traits[@"name"])
+        {
+            profile[@"Name"] = traits[@"name"];
+            [traits removeObjectForKey:@"name"];
+        }
+        
+        if (traits[@"phone"])
+        {
+            profile[@"Phone"] = [NSString stringWithFormat:@"%@", traits[@"phone"]];
+            [traits removeObjectForKey:@"phone"];
+        }
+        
+        if ([traits[@"gender"] isKindOfClass:[NSString class]])
+        {
+            NSString *gender = traits[@"gender"];
+            if ([gender.lowercaseString isEqualToString:@"male"] || [gender.lowercaseString isEqualToString:@"m"])
+            {
+                profile[@"Gender"] = @"M";
+            }
+            else if ([gender.lowercaseString isEqualToString:@"female"] || [gender.lowercaseString isEqualToString:@"f"])
+            {
+                profile[@"Gender"] = @"F";
+            }
+            [traits removeObjectForKey:@"gender"];
+        }
+        
+        if ([traits[@"birthday"] isKindOfClass:[NSString class]])
+        {
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+            NSLocale *enUSPOSIXLocale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
+            [dateFormatter setLocale:enUSPOSIXLocale];
+            [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+            profile[@"DOB"] = [dateFormatter dateFromString:traits[@"birthday"]];
+            [traits removeObjectForKey:@"birthday"];
+        }
+        
+        else if ([traits[@"birthday"] isKindOfClass:[NSDate class]])
+        {
+            profile[@"DOB"] = traits[@"birthday"];
+            [traits removeObjectForKey:@"birthday"];
+        }
+        
+        // Only Primitive types, Date, Address,Company Objects, String arrays are accepted
+        for (NSString *key in traits.allKeys)
+        {
+            id value = traits[key];
+            if (![value isKindOfClass:[NSDictionary class]])
+            {
+                profile[key] = value;
+                continue;
+            }
+            if([key isEqualToString:@"adderess"] || [key isEqualToString:@"address"] || [key isEqualToString:@"company"] )
+            {
+                NSMutableDictionary *nestedMap = [value mutableCopy];
+                for (NSString *nestedMapKey in nestedMap.allKeys)
+                {
+                    if([nestedMapKey isEqualToString:@"id"])
+                    {
+                        profile[@"companyId"] = nestedMap[nestedMapKey];
+                        continue;
+                    }
+                    if([nestedMapKey isEqualToString:@"name"])
+                    {
+                        profile[@"companyName"] = nestedMap[nestedMapKey];
+                        continue;
+                    }
+                    profile[nestedMapKey] = nestedMap[nestedMapKey];
+                }
+                continue;
+            }
+        }
+        
+        [[CleverTap sharedInstance] onUserLogin:profile];
+        
     }
     else if([type isEqualToString:@"track"])
     {
@@ -173,16 +193,16 @@
         NSDictionary *screenProperties = message.properties;
         if(screenProperties)
         {
-            [[CleverTap sharedInstance] recordEvent:[NSString stringWithFormat:@"Viewed %@ Screen",
+            [[CleverTap sharedInstance] recordEvent:[NSString stringWithFormat:@"Screen Viewed: %@",
                                                      screenName] withProps:screenProperties];
         }
         else
         {
-            [[CleverTap sharedInstance] recordEvent:[NSString stringWithFormat:@"Viewed %@ Screen",
+            [[CleverTap sharedInstance] recordEvent:[NSString stringWithFormat:@"Screen Viewed: %@",
                                                      screenName]];
         }
     }
-    else 
+    else
     {
         [RSLogger logDebug:@"CleverTap Integration: Message type not supported"];
     }
@@ -217,33 +237,33 @@
     NSArray *items = [NSArray new];
     
     NSDictionary *eventProperties = message.properties;
-    for (NSString *key in eventProperties.allKeys) 
+    for (NSString *key in eventProperties.allKeys)
     {
         id value = eventProperties[key];
-        if ([key isEqualToString:@"products"]) 
+        if ([key isEqualToString:@"products"])
         {
-            if (value != nil && [value isKindOfClass:[NSArray class]]) 
+            if (value != nil && [value isKindOfClass:[NSArray class]])
             {
                 NSArray *_products = (NSArray*) value;
-                if ([_products count] > 0) 
+                if ([_products count] > 0)
                 {
                     items = [self getProductList:_products];
                 }
             }
-        } 
-        else if ([value isKindOfClass:[NSDictionary class]] || [value isKindOfClass:[NSArray class]]) 
+        }
+        else if ([value isKindOfClass:[NSDictionary class]] || [value isKindOfClass:[NSArray class]])
         {
             continue;
-        } 
-        else if ([key isEqualToString:@"order_id"]) 
+        }
+        else if ([key isEqualToString:@"order_id"])
         {
             chargeDetails[@"Charged ID"] = value;
-        } 
-        else if ([key isEqualToString:@"revenue"]) 
+        }
+        else if ([key isEqualToString:@"revenue"])
         {
             chargeDetails[@"Amount"] = value;
-        } 
-        else 
+        }
+        else
         {
             chargeDetails[key] = value;
         }
