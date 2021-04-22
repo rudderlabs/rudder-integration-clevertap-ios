@@ -12,7 +12,8 @@
 
 static RudderCleverTapFactory *sharedInstance;
 
-+ (instancetype)instance {
++ (instancetype)instance 
+{
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [[self alloc] init];
@@ -20,11 +21,13 @@ static RudderCleverTapFactory *sharedInstance;
     return sharedInstance;
 }
 
-- (nonnull NSString *)key {
+- (nonnull NSString *)key 
+{
     return @"CleverTap";
 }
 
--(id<RSIntegration>)initiate:(NSDictionary *)config client:(RSClient *)client rudderConfig:(RSConfig *)rudderConfig{
+-(id<RSIntegration>)initiate:(NSDictionary *)config client:(RSClient *)client rudderConfig:(RSConfig *)rudderConfig
+{
     [RSLogger logDebug:@"Creating RudderIntegrationFactory: CleverTap"];
     return [[RudderCleverTapIntegration alloc] initWithConfig:config
                                                 withAnalytics:client
