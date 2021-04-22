@@ -32,6 +32,7 @@
                 {
                     [CleverTap setCredentialsWithAccountID:self.accountId andToken:self.accountToken];
                 }
+                
                 [[CleverTap sharedInstance] notifyApplicationLaunchedWithOptions:nil];
                 if(self.logLevel >= RSLogLevelDebug)
                 {
@@ -41,8 +42,10 @@
                 {
                     [CleverTap setDebugLevel:CleverTapLogInfo];
                 }
+                
                 [RSLogger logDebug:@"Initializing CleverTap SDK"];
-            }else
+            }
+            else
             {
                 [RSLogger logWarn:@"Failed to Initialize CleverTap Factory"];
             }
@@ -86,6 +89,7 @@
             profile[@"Identity"] = userId;
             [traits removeObjectForKey:@"userId"];
         }
+        
         if (traits[@"email"])
         {
             profile[@"Email"] = traits[@"email"];
@@ -127,7 +131,6 @@
             profile[@"DOB"] = [dateFormatter dateFromString:traits[@"birthday"]];
             [traits removeObjectForKey:@"birthday"];
         }
-        
         else if ([traits[@"birthday"] isKindOfClass:[NSDate class]])
         {
             profile[@"DOB"] = traits[@"birthday"];
@@ -302,7 +305,5 @@
     }
     return transformedProducts;
 }
-
-
 
 @end

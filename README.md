@@ -4,7 +4,7 @@
 
 More information on RudderStack can be found [here](https://github.com/rudderlabs/rudder-server).
 
-## Integrating Visual Studio CleverTap with RudderStack's iOS SDK
+## Integrating CleverTap with RudderStack's iOS SDK
 
 [CleverTap](https://clevertap.com/) s a popular customer engagement and retention platform. Its in-app analytics and marketing capabilities allow you to get real-time insights into your customers and build valuable, long-term relationships with them. With CleverTap, you can easily your users' actions and understand how they are using your product. You can also segment users based on their behavior and run targeted campaigns to boost your user engagement and retention metrics.
 
@@ -20,7 +20,7 @@ pod 'Rudder-CleverTap'
 ## Initialize ```RudderClient```
 
 Put this code in your ```AppDelegate.m``` file under the method ```didFinishLaunchingWithOptions```
-```
+```xcode
 RSConfigBuilder *builder = [[RSConfigBuilder alloc] init];
 [builder withDataPlaneUrl:<YOUR_DATA_PLANE_URL>];
 [builder withFactory:[RudderCleverTapFactory instance]];
