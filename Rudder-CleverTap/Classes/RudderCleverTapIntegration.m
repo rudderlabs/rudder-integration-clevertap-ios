@@ -80,6 +80,11 @@
     [RSLogger logDebug:@"Inside reset"];
 }
 
+- (void)flush { 
+    
+}
+
+
 - (void) processRudderEvent: (nonnull RSMessage *) message 
 {
     NSString *type = message.type;
@@ -304,6 +309,22 @@
         if(product[@"price"])
         {
             transformedProduct[@"price"] = product[@"price"];
+        }
+        if(product[@"quantity"])
+        {
+            transformedProduct[@"quantity"] = product[@"quantity"];
+        }
+        if(product[@"category"])
+        {
+            transformedProduct[@"category"] = product[@"category"];
+        }
+        if(product[@"url"])
+        {
+            transformedProduct[@"url"] = product[@"url"];
+        }
+        if(product[@"image_url"])
+        {
+            transformedProduct[@"image_url"] = product[@"image_url"];
         }
         [transformedProducts addObject:transformedProduct];
     }
