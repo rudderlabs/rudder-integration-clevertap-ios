@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Rudder-CleverTap'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = 'Privacy and Security focused Segment-alternative. CleverTap Native SDK integration support.'
 
   s.description      = <<-DESC
@@ -10,7 +10,7 @@ Rudder is a platform for collecting, storing and routing customer event data to 
   s.homepage         = 'https://github.com/rudderlabs/rudder-integration-clevertap-ios'
   s.license          = { :type => "Apache", :file => "LICENSE" }
   s.author           = { 'RudderStack' => 'venkat@rudderstack.com' }
-  s.source           = { :git => 'https://github.com/rudderlabs/rudder-integration-clevertap-ios.git', :tag => 'v1.0.1' }
+  s.source           = { :git => 'https://github.com/rudderlabs/rudder-integration-clevertap-ios.git', :tag => 'v1.0.2' }
   s.platform         = :ios, "9.0"
 
   ## Ref: https://github.com/CocoaPods/CocoaPods/issues/10065
@@ -23,6 +23,6 @@ Rudder is a platform for collecting, storing and routing customer event data to 
 
   s.static_framework = true
 
-  s.dependency 'Rudder'
-  s.dependency 'CleverTap-iOS-SDK'
+  s.dependency 'Rudder', '1.1.4'
+  s.dependency 'CleverTap-iOS-SDK', '3.10.0'
 end
