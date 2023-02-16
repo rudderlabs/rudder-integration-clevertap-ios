@@ -326,6 +326,10 @@
         {
             transformedProduct[@"image_url"] = product[@"image_url"];
         }
+        if(product[@"brand"])
+        {
+            transformedProduct[@"brand"] = product[@"brand"];
+        }
         [transformedProducts addObject:transformedProduct];
     }
     return transformedProducts;
