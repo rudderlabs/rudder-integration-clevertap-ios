@@ -2,6 +2,9 @@ require 'json'
 
 package = JSON.parse(File.read(File.join(__dir__, 'package.json')))
 
+clevertap_sdk_version = '~> 4.2'
+rudder_sdk_version = '~> 1.12'
+
 Pod::Spec.new do |s|
   s.name             = 'Rudder-CleverTap'
   s.version          = package['version']
@@ -13,20 +16,27 @@ Rudder is a platform for collecting, storing and routing customer event data to 
 
   s.homepage         = 'https://github.com/rudderlabs/rudder-integration-clevertap-ios'
   s.license          = { :type => "Apache", :file => "LICENSE" }
-  s.author           = { 'RudderStack' => 'venkat@rudderstack.com' }
+  s.author           = { 'RudderStack' => 'arnab@rudderstack.com' }
   s.source           = { :git => 'https://github.com/rudderlabs/rudder-integration-clevertap-ios.git', :tag => "v#{s.version}" }
-  s.platform         = :ios, "9.0"
-
-  ## Ref: https://github.com/CocoaPods/CocoaPods/issues/10065
-  s.pod_target_xcconfig = {
-    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
-  }
-  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  
+  s.ios.deployment_target = '9.0'
 
   s.source_files = 'Rudder-CleverTap/Classes/**/*'
 
-  s.static_framework = true
-
-  s.dependency 'Rudder', '~>1.0'
-  s.dependency 'CleverTap-iOS-SDK', '~>3.0'
+  if defined?($CleverTapSDKVersion)
+      Pod::UI.puts "#{s.name}: Using user specified Clevertap SDK version '#{$CleverTapSDKVersion}'"
+      clevertap_sdk_version = $CleverTapSDKVersion
+  else
+      Pod::UI.puts "#{s.name}: Using default Clevertap SDK version '#{clevertap_sdk_version}'"
+  end
+  
+  if defined?($RudderSDKVersion)
+      Pod::UI.puts "#{s.name}: Using user specified Rudder SDK version '#{$RudderSDKVersion}'"
+      rudder_sdk_version = $RudderSDKVersion
+  else
+      Pod::UI.puts "#{s.name}: Using default Rudder SDK version '#{rudder_sdk_version}'"
+  end
+  
+  s.dependency 'Rudder', rudder_sdk_version
+  s.dependency 'CleverTap-iOS-SDK', clevertap_sdk_version
 end
