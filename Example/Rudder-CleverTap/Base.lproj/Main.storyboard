@@ -1,31 +1,212 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="whP-gf-Uak">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uAs-JD-xIo">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="wQg-tq-qST">
+        <scene sceneID="Xay-wB-HNw">
             <objects>
-                <viewController id="whP-gf-Uak" customClass="_ViewController" sceneMemberID="viewController">
+                <viewController id="uAs-JD-xIo" customClass="_ViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="uEw-UM-LJ8"/>
-                        <viewControllerLayoutGuide type="bottom" id="Mvr-aV-6Um"/>
+                        <viewControllerLayoutGuide type="top" id="wjg-Pw-o3d"/>
+                        <viewControllerLayoutGuide type="bottom" id="gRG-0M-436"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="TpU-gO-2f1">
+                    <view key="view" contentMode="scaleToFill" id="agM-l1-szy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xni-Bm-AD8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f5r-OC-BGx">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="940"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wbB-cy-ewZ">
+                                                <rect key="frame" x="10" y="0.0" width="355" height="940"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Jc-Tj-jyY">
+                                                        <rect key="frame" x="0.0" y="0.0" width="355" height="60"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="HQi-Fb-AfG"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="tinted" title="Identify">
+                                                            <fontDescription key="titleFontDescription" type="system" pointSize="10"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="onButtonTap:" destination="uAs-JD-xIo" eventType="touchUpInside" id="DzC-nU-XIw"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHV-XF-PMP">
+                                                        <rect key="frame" x="0.0" y="80" width="355" height="60"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="TkU-NF-lQs"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="tinted" title="Update Identify">
+                                                            <fontDescription key="titleFontDescription" type="system" pointSize="10"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="onButtonTap:" destination="uAs-JD-xIo" eventType="touchUpInside" id="0tH-SA-cHD"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dn6-SF-WzK">
+                                                        <rect key="frame" x="0.0" y="160" width="355" height="60"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="tinted" title="Order Completed event without any property">
+                                                            <fontDescription key="titleFontDescription" type="system" pointSize="10"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="onButtonTap:" destination="uAs-JD-xIo" eventType="touchUpInside" id="2jr-ms-4hb"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a76-x6-5FO">
+                                                        <rect key="frame" x="0.0" y="240" width="355" height="60"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="tinted" title="Order Completed event with properties but without order_id">
+                                                            <fontDescription key="titleFontDescription" type="system" pointSize="10"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="onButtonTap:" destination="uAs-JD-xIo" eventType="touchUpInside" id="idE-hL-Ai6"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w1Q-xk-guF">
+                                                        <rect key="frame" x="0.0" y="320" width="355" height="60"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="tinted" title="Order Completed event with properties along order_id but without products">
+                                                            <fontDescription key="titleFontDescription" type="system" pointSize="10"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="onButtonTap:" destination="uAs-JD-xIo" eventType="touchUpInside" id="kmX-5K-HTd"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wmw-7g-Tm3">
+                                                        <rect key="frame" x="0.0" y="400" width="355" height="60"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="tinted" title="Order Completed event with properties along 1 product but without order_id">
+                                                            <fontDescription key="titleFontDescription" type="system" pointSize="10"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="onButtonTap:" destination="uAs-JD-xIo" eventType="touchUpInside" id="FLW-Uq-rj5"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tpk-Uf-uBo">
+                                                        <rect key="frame" x="0.0" y="480" width="355" height="60"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="tinted" title="Order Completed event with properties with 1 product and order_id">
+                                                            <fontDescription key="titleFontDescription" type="system" pointSize="10"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="onButtonTap:" destination="uAs-JD-xIo" eventType="touchUpInside" id="aYd-Cf-ywL"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zyh-fd-0cW">
+                                                        <rect key="frame" x="0.0" y="560" width="355" height="60"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="tinted" title="Order Completed event with properties with 2 products and order_id">
+                                                            <fontDescription key="titleFontDescription" type="system" pointSize="10"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="onButtonTap:" destination="uAs-JD-xIo" eventType="touchUpInside" id="yjq-10-3nc"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6MV-Mf-Rm2">
+                                                        <rect key="frame" x="0.0" y="640" width="355" height="60"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="tinted" title="Custom event name with properties">
+                                                            <fontDescription key="titleFontDescription" type="system" pointSize="10"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="onButtonTap:" destination="uAs-JD-xIo" eventType="touchUpInside" id="HUO-oI-BsK"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lhb-AD-Yc8">
+                                                        <rect key="frame" x="0.0" y="720" width="355" height="60"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="tinted" title="Custom event name without properties">
+                                                            <fontDescription key="titleFontDescription" type="system" pointSize="10"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="onButtonTap:" destination="uAs-JD-xIo" eventType="touchUpInside" id="dRu-Im-zfu"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sOa-Uz-7ei">
+                                                        <rect key="frame" x="0.0" y="800" width="355" height="60"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="tinted" title="Screen without properties">
+                                                            <fontDescription key="titleFontDescription" type="system" pointSize="10"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="onButtonTap:" destination="uAs-JD-xIo" eventType="touchUpInside" id="d5q-8V-UGU"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUb-7n-9jO">
+                                                        <rect key="frame" x="0.0" y="880" width="355" height="60"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="tinted" title="Screen">
+                                                            <fontDescription key="titleFontDescription" type="system" pointSize="10"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="onButtonTap:" destination="uAs-JD-xIo" eventType="touchUpInside" id="1vY-kn-jSo"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="wbB-cy-ewZ" secondAttribute="trailing" constant="10" id="1d2-AF-nBg"/>
+                                            <constraint firstAttribute="bottom" secondItem="wbB-cy-ewZ" secondAttribute="bottom" id="DtR-z7-T3v"/>
+                                            <constraint firstItem="wbB-cy-ewZ" firstAttribute="leading" secondItem="f5r-OC-BGx" secondAttribute="leading" constant="10" id="EiH-fa-0mN"/>
+                                            <constraint firstItem="wbB-cy-ewZ" firstAttribute="top" secondItem="f5r-OC-BGx" secondAttribute="top" id="zFm-2Y-HCY"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="f5r-OC-BGx" secondAttribute="trailing" id="5uG-D6-Y6V"/>
+                                    <constraint firstItem="f5r-OC-BGx" firstAttribute="top" secondItem="xni-Bm-AD8" secondAttribute="top" id="A7g-KI-pMX"/>
+                                    <constraint firstAttribute="bottom" secondItem="f5r-OC-BGx" secondAttribute="bottom" id="Ok5-Kx-Lc8"/>
+                                    <constraint firstItem="f5r-OC-BGx" firstAttribute="leading" secondItem="xni-Bm-AD8" secondAttribute="leading" id="a2K-le-T64"/>
+                                    <constraint firstItem="f5r-OC-BGx" firstAttribute="width" secondItem="xni-Bm-AD8" secondAttribute="width" id="o9G-kf-Bc9"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="xni-Bm-AD8" secondAttribute="trailing" id="3hP-eA-wEw"/>
+                            <constraint firstItem="xni-Bm-AD8" firstAttribute="width" secondItem="agM-l1-szy" secondAttribute="width" id="9Vh-r1-fwu"/>
+                            <constraint firstItem="xni-Bm-AD8" firstAttribute="leading" secondItem="agM-l1-szy" secondAttribute="leading" id="Fjh-iv-rAy"/>
+                            <constraint firstItem="gRG-0M-436" firstAttribute="top" secondItem="xni-Bm-AD8" secondAttribute="bottom" id="TXl-gk-bym"/>
+                            <constraint firstItem="xni-Bm-AD8" firstAttribute="top" secondItem="wjg-Pw-o3d" secondAttribute="bottom" id="w1Z-IK-qYg"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outletCollection property="buttons" destination="wmw-7g-Tm3" id="QAS-mq-kYY"/>
+                        <outletCollection property="buttons" destination="a76-x6-5FO" id="mXe-lI-a4m"/>
+                        <outletCollection property="buttons" destination="8Jc-Tj-jyY" id="SlW-9l-e2b"/>
+                        <outletCollection property="buttons" destination="Lhb-AD-Yc8" id="zdD-Yd-Nm2"/>
+                        <outletCollection property="buttons" destination="tpk-Uf-uBo" id="C8t-3t-Gl8"/>
+                        <outletCollection property="buttons" destination="6MV-Mf-Rm2" id="9Wf-QK-M1d"/>
+                        <outletCollection property="buttons" destination="dn6-SF-WzK" id="0rr-Ma-7Hg"/>
+                        <outletCollection property="buttons" destination="zyh-fd-0cW" id="IfM-8X-ThM"/>
+                        <outletCollection property="buttons" destination="w1Q-xk-guF" id="yfA-dp-wse"/>
+                        <outletCollection property="buttons" destination="sOa-Uz-7ei" id="xmA-ZR-qzR"/>
+                        <outletCollection property="buttons" destination="HUb-7n-9jO" id="MbX-ba-BDe"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Rd-s0-aYp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="433"/>
+            <point key="canvasLocation" x="215" y="365"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

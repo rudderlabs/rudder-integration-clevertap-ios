@@ -10,4 +10,6 @@
 
 @interface _ViewController : UIViewController
 
+@property (nonatomic, strong) IBOutletCollection(UIButton) NSArray *buttons;
+
 @end
