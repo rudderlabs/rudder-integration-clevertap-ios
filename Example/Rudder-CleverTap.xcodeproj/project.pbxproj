@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		374CEC6B85948FBA7373475D /* Pods_Rudder_CleverTap_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C62ECEFA34776EFED1AED5 /* Pods_Rudder_CleverTap_Example.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -23,9 +22,9 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
-		ED38D34829CAD2CB003A7544 /* RudderConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED38D34529CAD2CB003A7544 /* RudderConfig.plist */; };
 		ED38D34929CAD2CB003A7544 /* SampleRudderConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED38D34629CAD2CB003A7544 /* SampleRudderConfig.plist */; };
 		ED38D34A29CAD2CB003A7544 /* RudderConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED38D34729CAD2CB003A7544 /* RudderConfig.swift */; };
+		FE6D42B84B0290CB455CB2CA /* libPods-Rudder-CleverTap_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A2AA06A2DB621CE6B1FE71B4 /* libPods-Rudder-CleverTap_Example.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,8 +63,8 @@
 		6DD09709020B190939DEA447 /* Pods-Rudder-CleverTap_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rudder-CleverTap_Example.release.xcconfig"; path = "Target Support Files/Pods-Rudder-CleverTap_Example/Pods-Rudder-CleverTap_Example.release.xcconfig"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A2AA06A2DB621CE6B1FE71B4 /* libPods-Rudder-CleverTap_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Rudder-CleverTap_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5A6D50DF14C6F6409B28C0C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		B3C62ECEFA34776EFED1AED5 /* Pods_Rudder_CleverTap_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rudder_CleverTap_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED38D31929C8217B003A7544 /* deploy-cocoapods.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "deploy-cocoapods.yml"; sourceTree = "<group>"; };
 		ED38D31A29C8217B003A7544 /* notion-pr-sync.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "notion-pr-sync.yml"; sourceTree = "<group>"; };
 		ED38D31B29C8217B003A7544 /* check-pr-title.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "check-pr-title.yml"; sourceTree = "<group>"; };
@@ -80,7 +79,6 @@
 		ED38D32429C8217B003A7544 /* CONTRIBUTING.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = CONTRIBUTING.md; path = ../CONTRIBUTING.md; sourceTree = "<group>"; };
 		ED38D32529C8218B003A7544 /* package.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = package.json; path = ../package.json; sourceTree = "<group>"; };
 		ED38D34129CAD296003A7544 /* Rudder-CleverTap_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Rudder-CleverTap_Example-Bridging-Header.h"; sourceTree = "<group>"; };
-		ED38D34529CAD2CB003A7544 /* RudderConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RudderConfig.plist; sourceTree = "<group>"; };
 		ED38D34629CAD2CB003A7544 /* SampleRudderConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SampleRudderConfig.plist; sourceTree = "<group>"; };
 		ED38D34729CAD2CB003A7544 /* RudderConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RudderConfig.swift; sourceTree = "<group>"; };
 		F6A9B5DF261B065100EF95B3 /* Rudder-CleverTap_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Rudder-CleverTap_Example.entitlements"; sourceTree = "<group>"; };
@@ -94,7 +92,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				374CEC6B85948FBA7373475D /* Pods_Rudder_CleverTap_Example.framework in Frameworks */,
+				FE6D42B84B0290CB455CB2CA /* libPods-Rudder-CleverTap_Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,7 +138,7 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				B3C62ECEFA34776EFED1AED5 /* Pods_Rudder_CleverTap_Example.framework */,
+				A2AA06A2DB621CE6B1FE71B4 /* libPods-Rudder-CleverTap_Example.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -244,7 +242,6 @@
 		ED38D34429CAD2CB003A7544 /* RudderConfig */ = {
 			isa = PBXGroup;
 			children = (
-				ED38D34529CAD2CB003A7544 /* RudderConfig.plist */,
 				ED38D34629CAD2CB003A7544 /* SampleRudderConfig.plist */,
 				ED38D34729CAD2CB003A7544 /* RudderConfig.swift */,
 			);
@@ -262,7 +259,7 @@
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				27A68136619B53A3367BBC60 /* [CP] Embed Pods Frameworks */,
+				25B24AABB6D2C3CC5F5E6542 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -336,7 +333,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
-				ED38D34829CAD2CB003A7544 /* RudderConfig.plist in Resources */,
 				ED38D34929CAD2CB003A7544 /* SampleRudderConfig.plist in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
@@ -355,28 +351,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		27A68136619B53A3367BBC60 /* [CP] Embed Pods Frameworks */ = {
+		25B24AABB6D2C3CC5F5E6542 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Rudder-CleverTap_Example/Pods-Rudder-CleverTap_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/CleverTap-iOS-SDK/CleverTapSDK.framework",
-				"${BUILT_PRODUCTS_DIR}/Rudder/Rudder.framework",
-				"${BUILT_PRODUCTS_DIR}/Rudder-CleverTap/Rudder_CleverTap.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Rudder-CleverTap_Example/Pods-Rudder-CleverTap_Example-resources.sh",
+				"${PODS_ROOT}/CleverTap-iOS-SDK/CleverTapSDK/AmazonRootCA1.cer",
+				"${PODS_CONFIGURATION_BUILD_DIR}/CleverTap-iOS-SDK/CleverTapSDK.bundle",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CleverTapSDK.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rudder.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rudder_CleverTap.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AmazonRootCA1.cer",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CleverTapSDK.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Rudder-CleverTap_Example/Pods-Rudder-CleverTap_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Rudder-CleverTap_Example/Pods-Rudder-CleverTap_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		370552148D5F3E2F31815285 /* [CP] Check Pods Manifest.lock */ = {

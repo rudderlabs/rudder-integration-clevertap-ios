@@ -1,8 +1,8 @@
 PODS:
-  - CleverTap-iOS-SDK (4.2.0):
+  - CleverTap-iOS-SDK (4.2.1):
     - SDWebImage (~> 5.11)
-  - Rudder (1.12.0)
-  - Rudder-CleverTap (1.0.4):
+  - Rudder (1.13.0)
+  - Rudder-CleverTap (1.1.0):
     - CleverTap-iOS-SDK (~> 4.2)
     - Rudder (~> 1.12)
   - SDWebImage (5.15.5):
@@ -13,7 +13,7 @@ DEPENDENCIES:
   - Rudder-CleverTap (from `../`)
 
 SPEC REPOS:
-  trunk:
+  https://github.com/CocoaPods/Specs.git:
     - CleverTap-iOS-SDK
     - Rudder
     - SDWebImage
@@ -23,11 +23,11 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CleverTap-iOS-SDK: 124ee0f4bd90c5ffa213b2da05f81496d7339015
-  Rudder: 91e5ac5c13f2094da5440ff13cce4a7337a73c3b
-  Rudder-CleverTap: 00af69ea5f36bc55170b73eb0098053472bfb0b3
+  CleverTap-iOS-SDK: fa1dc112e97829410b15ea456564cb9d552ce23e
+  Rudder: 840bf4dfd9816ce6a82cb8870f1a2d4a44ed2652
+  Rudder-CleverTap: ea9c41500c2974d5485432babf3bdb5f5ab1e2eb
   SDWebImage: fd7e1a22f00303e058058278639bf6196ee431fe
 
-PODFILE CHECKSUM: 8e8a828b57d858ed083ace7fee3283e15ffa6bcb
+PODFILE CHECKSUM: 1351122be7db6d293f48fe787bca19582dbd87df
 
-COCOAPODS: 1.12.0
+COCOAPODS: 1.11.3

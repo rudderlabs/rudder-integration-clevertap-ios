@@ -7,7 +7,7 @@
 
 #import "RudderCleverTapIntegration.h"
 #import <Rudder/Rudder.h>
-#import <CleverTapSDK/CleverTap.h>
+@import CleverTapSDK;
 
 @implementation RudderCleverTapIntegration
 
