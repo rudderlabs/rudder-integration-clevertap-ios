@@ -7,8 +7,11 @@
 
 #import "RudderCleverTapIntegration.h"
 #import <Rudder/Rudder.h>
-@import CleverTapSDK;
-
+#if defined(__has_include) && __has_include(<CleverTap-iOS-SDK/CleverTap.h>)
+#import <CleverTap-iOS-SDK/CleverTap.h>
+#else
+#import <CleverTapSDK/CleverTap.h>
+#endif
 @implementation RudderCleverTapIntegration
 
 #pragma mark - Initialization
