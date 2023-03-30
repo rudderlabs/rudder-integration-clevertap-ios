@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.1.1 (2023-03-30)
+
+
+### Bug Fixes
+
+* update clevertap import library to solve the build issue in RN CleverTap integration ([18b7a10](https://github.com/rudderlabs/rudder-integration-clevertap-ios/commit/18b7a10e7500a40612f241619c1310014f0bb3b8))
+
 ## 1.1.0 (2023-03-28)
 
 
