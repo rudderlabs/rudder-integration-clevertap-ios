@@ -15,7 +15,7 @@ Rudder is a platform for collecting, storing and routing customer event data to 
                        DESC
 
   s.homepage         = 'https://github.com/rudderlabs/rudder-integration-clevertap-ios'
-  s.license          = { :type => "Apache", :file => "LICENSE" }
+  s.license          = { :type => "ELv2", :file => "LICENSE.md" }
   s.author           = { 'RudderStack' => 'arnab@rudderstack.com' }
   s.source           = { :git => 'https://github.com/rudderlabs/rudder-integration-clevertap-ios.git', :tag => "v#{s.version}" }
   
