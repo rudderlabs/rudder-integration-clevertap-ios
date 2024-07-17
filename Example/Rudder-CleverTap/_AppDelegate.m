@@ -29,7 +29,7 @@
         if (rudderConfig != nil) {
             RSConfigBuilder *configBuilder = [[RSConfigBuilder alloc] init];
             [configBuilder withDataPlaneUrl:rudderConfig.PROD_DATA_PLANE_URL];
-            [configBuilder withLoglevel:RSLogLevelNone];
+            [configBuilder withLoglevel:RSLogLevelDebug];
             [configBuilder withFactory:[RudderCleverTapFactory instance]];
        
             [configBuilder withTrackLifecycleEvens:false];
