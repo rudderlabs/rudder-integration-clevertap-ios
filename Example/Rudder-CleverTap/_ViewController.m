@@ -27,9 +27,6 @@
 
 - (IBAction)onButtonTap:(UIButton *)sender {
     switch (sender.tag) {
-        case 10:
-            [[RSClient sharedInstance] identify:@"rudderstack_ios_4"];
-            break;
         case 11: {
             NSDateComponents *dob = [[NSDateComponents alloc] init];
             dob.day = 24;
@@ -38,7 +35,7 @@
             NSDate *d = [[NSCalendar currentCalendar] dateFromComponents:dob];
             NSDictionary *profile = @{
                 @"name": @"RudderStack iOS",               // String or number
-                @"email": @"ios-4@rudderstack.com",            // Email address of the user
+                @"email": @"testuseriOS@example.com",            // Email address of the user
                 @"phone": @"+919876543210",              // Phone (with the country code, starting with +)
                 @"gender": @"M",                        // Can be either M or F
                 @"Employed": @"Y",                      // Can be either Y or N

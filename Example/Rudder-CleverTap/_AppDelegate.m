@@ -29,8 +29,9 @@
         if (rudderConfig != nil) {
             RSConfigBuilder *configBuilder = [[RSConfigBuilder alloc] init];
             [configBuilder withDataPlaneUrl:rudderConfig.PROD_DATA_PLANE_URL];
-            [configBuilder withLoglevel:RSLogLevelDebug];
+            [configBuilder withLoglevel:RSLogLevelNone];
             [configBuilder withFactory:[RudderCleverTapFactory instance]];
+       
             [configBuilder withTrackLifecycleEvens:false];
             [RSClient getInstance:rudderConfig.WRITE_KEY config:[configBuilder build]];
         }
@@ -101,5 +102,7 @@
 {
     [[RudderCleverTapIntegration alloc] receivedRemoteNotification:response.notification.request.content.userInfo];
 }
+
+
 
 @end
