@@ -142,6 +142,7 @@
         
     }
     else if([type isEqualToString:@"track"]) {
+       
         NSString *eventName = message.event;
         if([eventName isEqualToString:@"Order Completed"]) {
             [self handleEcommerceEvent:message];
