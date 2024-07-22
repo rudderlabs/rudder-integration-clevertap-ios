@@ -1,13 +1,19 @@
 PODS:
-  - CleverTap-iOS-SDK (4.2.1):
+  - CleverTap-iOS-SDK (6.2.1):
     - SDWebImage (~> 5.11)
-  - Rudder (1.13.0)
-  - Rudder-CleverTap (1.1.1):
-    - CleverTap-iOS-SDK (~> 4.2)
+  - MetricsReporter (1.2.1):
+    - RSCrashReporter (= 1.0.1)
+    - RudderKit (= 1.4.0)
+  - RSCrashReporter (1.0.1)
+  - Rudder (1.27.0):
+    - MetricsReporter (= 1.2.1)
+  - Rudder-CleverTap (1.1.2):
+    - CleverTap-iOS-SDK (~> 6.2.1)
     - Rudder (~> 1.12)
-  - SDWebImage (5.15.5):
-    - SDWebImage/Core (= 5.15.5)
-  - SDWebImage/Core (5.15.5)
+  - RudderKit (1.4.0)
+  - SDWebImage (5.19.4):
+    - SDWebImage/Core (= 5.19.4)
+  - SDWebImage/Core (5.19.4)
 
 DEPENDENCIES:
   - Rudder-CleverTap (from `../`)
@@ -15,7 +21,10 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - CleverTap-iOS-SDK
+    - MetricsReporter
+    - RSCrashReporter
     - Rudder
+    - RudderKit
     - SDWebImage
 
 EXTERNAL SOURCES:
@@ -23,11 +32,14 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CleverTap-iOS-SDK: fa1dc112e97829410b15ea456564cb9d552ce23e
-  Rudder: 840bf4dfd9816ce6a82cb8870f1a2d4a44ed2652
-  Rudder-CleverTap: d921803d0c71bed0ae903f528c3d10ed184efb48
-  SDWebImage: fd7e1a22f00303e058058278639bf6196ee431fe
+  CleverTap-iOS-SDK: 78ea6d752d84918f0426f7b3959777d862bcb348
+  MetricsReporter: 99596ee5003c69949ed2f50acc34aee83c42f843
+  RSCrashReporter: 6b8376ac729b0289ebe0908553e5f56d8171f313
+  Rudder: 3cfcd9e6c5359cd6d49f411101ed9b894e3b64bd
+  Rudder-CleverTap: d52132be789da44760fc3784281b6bc4850eeea9
+  RudderKit: f272f9872183946452ac94cd7bb2244a71e6ca8f
+  SDWebImage: 066c47b573f408f18caa467d71deace7c0f8280d
 
 PODFILE CHECKSUM: b3d3e50f6c54e81833ae3981e7d5ef0b9e30efaf
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.15.2
