@@ -2,7 +2,7 @@ require 'json'
 
 package = JSON.parse(File.read(File.join(__dir__, 'package.json')))
 
-clevertap_sdk_version = '~> 4.2'
+clevertap_sdk_version = '~> 6.2.1'
 rudder_sdk_version = '~> 1.12'
 
 Pod::Spec.new do |s|
@@ -15,7 +15,7 @@ Rudder is a platform for collecting, storing and routing customer event data to 
                        DESC
 
   s.homepage         = 'https://github.com/rudderlabs/rudder-integration-clevertap-ios'
-  s.license          = { :type => "Apache", :file => "LICENSE" }
+  s.license          = { :type => "ELv2", :file => "LICENSE.md" }
   s.author           = { 'RudderStack' => 'arnab@rudderstack.com' }
   s.source           = { :git => 'https://github.com/rudderlabs/rudder-integration-clevertap-ios.git', :tag => "v#{s.version}" }
   
