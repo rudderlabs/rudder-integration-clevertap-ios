@@ -3,7 +3,7 @@ require 'json'
 package = JSON.parse(File.read(File.join(__dir__, 'package.json')))
 
 clevertap_sdk_version = '~> 7.1.1'
-rudder_sdk_version = '~> 1.12'
+rudder_sdk_version = '~> 1.31'
 
 Pod::Spec.new do |s|
   s.name             = 'Rudder-CleverTap'
