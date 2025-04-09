@@ -13,6 +13,12 @@
 #import "Rudder.h"
 #endif
 
+// Below import is for the Rudder React Native CleverTap device mode.
+#if defined(__has_include) && __has_include(<CleverTap-iOS-SDK/CleverTap.h>)
+#import <CleverTap-iOS-SDK/CleverTap.h>
+#else
+#import "CleverTapSDK/CleverTap.h"
+#endif
 
 NS_ASSUME_NONNULL_BEGIN
 
