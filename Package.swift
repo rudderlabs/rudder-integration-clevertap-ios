@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "Rudder-CleverTap",
     platforms: [
-        .iOS("13.0")
+        .iOS("12.0")
     ],
     products: [
         .library(
@@ -14,7 +14,7 @@ let package = Package(
             targets: ["Rudder-CleverTap"]),
     ],
     dependencies: [
-        .package(name: "clevertap-ios-sdk", url: "https://github.com/CleverTap/clevertap-ios-sdk.git", "7.0.0"..<"8.0.0"),
+        .package(name: "clevertap-ios-sdk", url: "https://github.com/CleverTap/clevertap-ios-sdk.git", .exact("7.1.1")),
         .package(name: "Rudder", url: "https://github.com/rudderlabs/rudder-sdk-ios", "1.31.1"..<"2.0.0")
     ],
     targets: [
