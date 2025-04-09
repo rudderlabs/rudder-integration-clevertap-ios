@@ -40,3 +40,4 @@ Rudder is a platform for collecting, storing and routing customer event data to 
   s.dependency 'Rudder', rudder_sdk_version
   s.dependency 'CleverTap-iOS-SDK', clevertap_sdk_version
 end
+
