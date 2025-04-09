@@ -2,8 +2,8 @@ require 'json'
 
 package = JSON.parse(File.read(File.join(__dir__, 'package.json')))
 
-clevertap_sdk_version = '~> 6.2.1'
-rudder_sdk_version = '~> 1.12'
+clevertap_sdk_version = '~> 7.1.1'
+rudder_sdk_version = '~> 1.31'
 
 Pod::Spec.new do |s|
   s.name             = 'Rudder-CleverTap'
@@ -19,7 +19,7 @@ Rudder is a platform for collecting, storing and routing customer event data to 
   s.author           = { 'RudderStack' => 'arnab@rudderstack.com' }
   s.source           = { :git => 'https://github.com/rudderlabs/rudder-integration-clevertap-ios.git', :tag => "v#{s.version}" }
   
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '12.0'
 
   s.source_files = 'Rudder-CleverTap/Classes/**/*'
 
@@ -40,3 +40,4 @@ Rudder is a platform for collecting, storing and routing customer event data to 
   s.dependency 'Rudder', rudder_sdk_version
   s.dependency 'CleverTap-iOS-SDK', clevertap_sdk_version
 end
+
