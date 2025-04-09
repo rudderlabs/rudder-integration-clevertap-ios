@@ -1,0 +1,61 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "CleverTapSDK",
+        "repositoryURL": "https://github.com/CleverTap/clevertap-ios-sdk.git",
+        "state": {
+          "branch": null,
+          "revision": "2174e1efe5549c125f02ff190c9cd94f7d3044d6",
+          "version": "7.1.1"
+        }
+      },
+      {
+        "package": "RSCrashReporter",
+        "repositoryURL": "https://github.com/rudderlabs/crash-reporter-ios",
+        "state": {
+          "branch": null,
+          "revision": "ee563535b64d9d5feacd0fa243663b2658033a19",
+          "version": "1.0.1"
+        }
+      },
+      {
+        "package": "MetricsReporter",
+        "repositoryURL": "https://github.com/rudderlabs/metrics-reporter-ios",
+        "state": {
+          "branch": null,
+          "revision": "e307fa37c6c2d2cccf787d73b5b4b5bc3f650435",
+          "version": "2.0.0"
+        }
+      },
+      {
+        "package": "RudderKit",
+        "repositoryURL": "https://github.com/rudderlabs/rudder-ios-kit",
+        "state": {
+          "branch": null,
+          "revision": "8a557a80cc1b0e0bc948c2b17fe0fd3809bcfd61",
+          "version": "1.4.0"
+        }
+      },
+      {
+        "package": "Rudder",
+        "repositoryURL": "https://github.com/rudderlabs/rudder-sdk-ios",
+        "state": {
+          "branch": null,
+          "revision": "6fa297b1fa1f8911db17bdc9058df093419ebd15",
+          "version": "1.31.1"
+        }
+      },
+      {
+        "package": "SDWebImage",
+        "repositoryURL": "https://github.com/SDWebImage/SDWebImage.git",
+        "state": {
+          "branch": null,
+          "revision": "cac9a55a3ae92478a2c95042dcc8d9695d2129ca",
+          "version": "5.21.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
