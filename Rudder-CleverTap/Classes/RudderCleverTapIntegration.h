@@ -6,7 +6,14 @@
 //
 
 #import <Foundation/Foundation.h>
+
+#if defined(__has_include) && __has_include(<Rudder/Rudder.h>)
 #import <Rudder/Rudder.h>
+#else
+#import "Rudder.h"
+#endif
+
+@import CleverTapSDK;
 
 NS_ASSUME_NONNULL_BEGIN
 
