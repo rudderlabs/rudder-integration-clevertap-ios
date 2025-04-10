@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.3.0 (2025-04-10)
+
+
+### Features
+
+* add spm support on rudder-clevertap ([ebd5d75](https://github.com/rudderlabs/rudder-integration-clevertap-ios/commit/ebd5d75058f287bab7ba7e08c0a3a517f23c0c0c))
+* upgrade clevertap sdk version to latest 7.1.1 ([e33ce31](https://github.com/rudderlabs/rudder-integration-clevertap-ios/commit/e33ce313b3db5fd0225a6e26f8ecc31b3d025f33))
+
 ## 1.2.0 (2024-07-22)
 
 
