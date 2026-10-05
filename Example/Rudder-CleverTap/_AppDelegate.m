@@ -98,11 +98,22 @@
     completionHandler(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge);
 }
 
-- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler 
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler
 {
     [[RudderCleverTapIntegration alloc] receivedRemoteNotification:response.notification.request.content.userInfo];
 }
 
 
 
+@end
+
+#pragma mark - UIScene lifecycle
+
+@interface _SceneDelegate : UIResponder <UIWindowSceneDelegate>
+@property (strong, nonatomic) UIWindow *window;
+@end
+
+// Intentionally empty: the storyboard sets up the window, and push/notification
+// callbacks stay on the app delegate where UIKit still delivers them.
+@implementation _SceneDelegate
 @end
