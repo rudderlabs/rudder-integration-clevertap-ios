@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/rudderlabs/rudder-integration-clevertap-ios/compare/v1.2.0...v1.4.0) (2026-11-18)
+
+
+### Features
+
+* raise minimum iOS deployment target to 15.0 ([#60](https://github.com/rudderlabs/rudder-integration-clevertap-ios/issues/60)) ([49aac5f](https://github.com/rudderlabs/rudder-integration-clevertap-ios/commit/49aac5f32aec50c99d8f78859569de05ae2ffb1a))
+
+
+### Bug Fixes
+
+* add permission-members read for team reviewer assignment ([850d1f2](https://github.com/rudderlabs/rudder-integration-clevertap-ios/commit/850d1f212662397c652ab3540a2a716b8ec44f2a))
+* remove non-existent files, fix changelog order, and remove pr_reviewer ([2a99d49](https://github.com/rudderlabs/rudder-integration-clevertap-ios/commit/2a99d4944897317a42a5dbcb804c072740ee6086))
+* sdk-5215 correct ios release workflows ([#57](https://github.com/rudderlabs/rudder-integration-clevertap-ios/issues/57)) ([3f8683b](https://github.com/rudderlabs/rudder-integration-clevertap-ios/commit/3f8683b4de0222e210079bab74fa4971d96e1a81))
+* **vuln:** pin and bump action refs (SEC-171) ([a006427](https://github.com/rudderlabs/rudder-integration-clevertap-ios/commit/a006427194c856072a0460880768c8a2d3d71384))
+
 ## 1.3.0 (2025-04-10)
 
 
