@@ -14,6 +14,8 @@
 #else
 #import <CleverTapSDK/CleverTap.h>
 #endif
+#else
+@import CleverTapSDK;
 #endif
 
 @implementation RudderCleverTapIntegration
