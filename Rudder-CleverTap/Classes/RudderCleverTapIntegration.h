@@ -13,8 +13,6 @@
 #import "Rudder.h"
 #endif
 
-@import CleverTapSDK;
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RudderCleverTapIntegration : NSObject<RSIntegration>
