@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.1](https://github.com/rudderlabs/rudder-integration-clevertap-ios/compare/v1.4.0...v1.4.1) (2026-11-26)
+
+
+### Bug Fixes
+
+* avoid clevertap module import in public header ([#63](https://github.com/rudderlabs/rudder-integration-clevertap-ios/issues/63)) ([425342a](https://github.com/rudderlabs/rudder-integration-clevertap-ios/commit/425342ab4cfb444434866489166ec6482e735c66))
+
 ## [1.4.0](https://github.com/rudderlabs/rudder-integration-clevertap-ios/compare/v1.3.0...v1.4.0) (2026-11-18)
 
 
